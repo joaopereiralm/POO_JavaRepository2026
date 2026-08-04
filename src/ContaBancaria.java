@@ -20,7 +20,7 @@ public class ContaBancaria{
         totalContas++;
     }
     public void  depositar(double valor){
-        if (valor >= 0){
+        if (valor > 0){
             System.out.println("Valor depositado: R$" + valor);
             this.saldo += valor;
         }
@@ -28,15 +28,21 @@ public class ContaBancaria{
             System.out.println("Valor inválido");
         }
     }
-    public void saque(double valor){
-        if (valor >= saldo)
-            System.out.println("Valor sacado: " + valor);
-        this.saldo -= valor;
+    public void saque(double valorSaque){
+        if (valorSaque > this.saldo){
+            System.out.println("Valor inválido");
+        } else if (valorSaque <= 0) {
+            System.out.println("Valor inválido");
+        }
+        else {
+            System.out.println("Valor sacado: " + valorSaque);
+        }
+        this.saldo -= valorSaque;
     }
     public void ExibirCB(){
         //this representa  objeto que chama o metodo
         System.out.println("Titular: " + this.titular +
                 " Número: " + this.numero +
-                " Saldo R$: " + this.saldo);
+                " Saldo: R$" + this.saldo);
     }
 }
