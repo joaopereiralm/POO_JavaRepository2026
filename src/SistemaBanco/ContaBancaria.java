@@ -1,3 +1,5 @@
+package SistemaBanco;
+
 public class ContaBancaria{
     //variaveis de classe
     public static int totalContas = 0;
@@ -41,8 +43,8 @@ public class ContaBancaria{
     }
     public void ExibirCB(){
         //this representa  objeto que chama o metodo
-        System.out.println("Titular: " + this.titular +
-                " Número: " + this.numero +
-                " Saldo: R$" + this.saldo);
+        System.out.println("|Titular: " + this.titular + "|" +
+                " |Número: " + this.numero + "|" +
+                " |Saldo: R$" + this.saldo + "|");
     }
 }
