@@ -1,6 +1,6 @@
 # 🚀 Estudos em Java & POO | FATEC Franca
 
-Repositório dedicado ao armazenamento de códigos, exercícios e projetos práticos focados no aprendizado de **Programação Orientada a Objetos (POO)** com **Java**, desenvolvidos durante o curso na **FATEC Franca - Dr. Thomaz Novelino**.
+Repositório dedicado ao armazenamento de códigos, exercícios e projetos práticos focados no aprendizado de **Programação Orientada a Objetos (POO)** com **Java**, desenvolvidos durante o curso de **ADS - Análise e Desenvolvimento de Sistemas** na **FATEC Franca - Dr. Thomaz Novelino**.
 
 ---
 
