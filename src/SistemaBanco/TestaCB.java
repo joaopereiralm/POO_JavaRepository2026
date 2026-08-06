@@ -29,8 +29,6 @@ public class TestaCB {
                 break;
             }
             else {
-                //inicia contagem para o switch das contas
-                int contaop = 0;
 
                 //menu de contas após escolha realizada pelo usuário
                 System.out.println("\n--- SELECIONE A CONTA ---");
@@ -38,7 +36,7 @@ public class TestaCB {
                 System.out.println("2 - Conta 2 (" + cb2.titular + ")");
                 System.out.println("3 - Conta 3 (" + cb3.titular + ")");
                 System.out.print("Digite o número da conta: ");
-                contaop = sc.nextInt();
+                int contaop = sc.nextInt();
 
                 double valorDeposito = 0;
                 double valorSaque = 0;

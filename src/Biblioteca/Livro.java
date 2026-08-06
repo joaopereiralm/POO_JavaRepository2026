@@ -52,8 +52,17 @@ public class Livro {
         } else {
             status = "Indisponível";
         }
+
         System.out.println(ContadorLivros + " " + "|Titulo: " + this.titulo + "|" +
                 " |Autor: " + this.autor + "|" +
                 " |" + status + "|");
+    }
+
+    //exibe todos os livros com uma classe
+    public static boolean exibirMenuLivros(Livro l1, Livro l2, Livro l3) {
+        l1.exibirFicha(1);
+        l2.exibirFicha(2);
+        l3.exibirFicha(3);
+        return false;
     }
 }
