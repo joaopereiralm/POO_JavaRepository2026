@@ -23,6 +23,17 @@ Aplicação via terminal que simula operações bancárias básicas utilizando c
 - **Estrutura:** Menu interativo em loop (`while`) e navegação por menu duplo utilizando seleções com `switch case`.
 - **Gestão de Múltiplas Contas:** Instanciação e controle individualizado de objetos de contas bancárias.
 
+##
+
+### 📚 Sistema de Controle de Biblioteca (Livro & BibliotecaApp)
+Aplicação via terminal desenvolvida para gerenciar o acervo e a disponibilidade de livros em uma biblioteca:
+- **Operações:** Cadastro de livros, exibição de fichas técnicas formatadas, controle de empréstimos, devoluções e contagem total de itens no acervo.
+- **Conceitos de POO Aplicados:** 
+  - **Construtores e Sobrecarga (`this`):** Instanciação flexível de objetos com valores padrão ou personalizados para título, autor e status de disponibilidade.
+  - **Atributos e Métodos Estáticos (`static`):** Controle centralizado da quantidade total de livros instanciados na biblioteca (`TotalLivros`).
+  - **Formatação e Legibilidade:** Exibição de ficha técnica usando passagem de parâmetros para numeração dos itens e tratamento do status (`boolean` para `String`).
+- **Estrutura:** Menu interativo para navegação e teste das funcionalidades via terminal.
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
