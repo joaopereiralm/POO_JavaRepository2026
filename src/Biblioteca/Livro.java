@@ -1,42 +1,42 @@
 package Biblioteca;
 
 public class Livro {
-//atributos
+    //atributos
     static int TotalLivros = 0;
 
     public String titulo;
     public String autor;
     public boolean disponivel;
 
-    public Livro () {
-        this ("Sem título", "Sem autor", true);
+    public Livro() {
+        this("Sem título", "Sem autor");
     }
-    public Livro (String titulo, String autor, boolean disponivel){
+
+    public Livro(String titulo, String autor) {
         this.titulo = titulo;
         this.autor = autor;
-        this.disponivel = disponivel;
+        this.disponivel = true;
         TotalLivros++;
     }
 
-    public static int getTotalLivros(){
+    public static int getTotalLivros() {
         return TotalLivros;
     }
 
     //construtores
-    public void emprestar(int numero){
+    public void emprestar(int numero) {
         //vai verificar se o livro está disponível
-        if (this.disponivel){
+        if (this.disponivel) {
             this.disponivel = false;
             System.out.println("\nLivro emprestado com sucesso!");
             exibirFicha(numero); //vai deixar o livro em falso, pois está emprestado.
-        }
-        else {
+        } else {
             System.out.println("\nEste livro já foi emprestado");
             exibirFicha(numero);
         }
     }
 
-    public void devolver (int numero) {
+    public void devolver(int numero) {
         //vai verificar se o livro está disponível
         if (!this.disponivel) {
             this.disponivel = true; //atualiza de emprestado para devolvido
@@ -48,15 +48,17 @@ public class Livro {
         }
     }
 
-    public void exibirFicha(int ContadorLivros){
+    public void exibirFicha(int ContadorLivros) {
         //tornando boolean em String para que possa ficar melhor visívelmente.
         String status;
-        if (this.disponivel) {
-            status = "Disponível";
-        } else {
-            status = "Emprestado";
-        }
 
+        //caso dados forem vazio vai retornar indisponível.
+        if ((this.titulo == null || this.titulo.trim().isEmpty() || this.titulo.equals("Sem título")) &&
+                (this.autor == null || this.autor.trim().isEmpty() || this.autor.equals("Sem autor"))) {
+            status = "Indisponível";
+        } else {
+            status = this.disponivel ? "Disponível" : "Emprestado";
+        }
         System.out.println(ContadorLivros + " " + "|Titulo: " + this.titulo + "|" +
                 " |Autor: " + this.autor + "|" +
                 " |" + status + "|");

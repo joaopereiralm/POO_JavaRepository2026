@@ -2,15 +2,14 @@ package Biblioteca;
 
 import java.util.Scanner;
 
-import static Biblioteca.Livro.exibirLivrosEmprestados;
 import static Biblioteca.Livro.exibirMenuLivros;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Livro lv1 = new Livro("Devoradores de Estrelas", "Andy Weir", true);
-        Livro lv2 = new Livro("Drácula", "Bram Stoker", true);
-        Livro lv3 = new Livro("Racionais Mc's", "Racionais Mc's", false);
+        Livro lv1 = new Livro("Devoradores de Estrelas", "Andy Weir");
+        Livro lv2 = new Livro("Drácula", "Bram Stoker");
+        Livro lv3 = new Livro();
 
         int opcase = 0;
 
