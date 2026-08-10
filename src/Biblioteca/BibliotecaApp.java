@@ -25,6 +25,7 @@ public class BibliotecaApp {
            opcase = sc.nextInt();
 
            switch (opcase) {
+               //case de devolução
                case 1:
                    System.out.println("\n--- DEVOLUÇÃO ---");
                    System.out.println("Livros não devolvidos:");
@@ -44,6 +45,7 @@ public class BibliotecaApp {
                    }
                    break;
 
+               //case de empréstimo
                case 2:
                    System.out.println("\n--- EMPRÉSTIMO ---");
                    System.out.println("Livros Disponíveis:");
