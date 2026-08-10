@@ -23,24 +23,28 @@ public class Livro {
     }
 
     //construtores
-    public void emprestar(){
+    public void emprestar(int numero){
         //vai verificar se o livro está disponível
         if (this.disponivel){
-            System.out.println("O livro está disponível");
-            this.disponivel = false;//vai deixar o livro em falso, pois está emprestado.
+            this.disponivel = false;
+            System.out.println("\nLivro emprestado com sucesso!");
+            exibirFicha(numero); //vai deixar o livro em falso, pois está emprestado.
         }
         else {
-            System.out.println("Indisponível");
+            System.out.println("\nEste livro já foi emprestado");
+            exibirFicha(numero);
         }
     }
 
-    public void devolver () {
+    public void devolver (int numero) {
         //vai verificar se o livro está disponível
         if (!this.disponivel) {
-            System.out.println("O livro foi emprestado");
-            this.disponivel = true;//vai deixar o livro em true, pois está sendo devolvido.
+            this.disponivel = true; //atualiza de emprestado para devolvido
+            System.out.println("\nLivro devolvido com sucesso!");
+            exibirFicha(numero); //exibe a ficha como devolvido
         } else {
-            System.out.println("Disponível");
+            System.out.println("\nEste livro já está disponível na biblioteca:");
+            exibirFicha(numero);
         }
     }
 
@@ -50,7 +54,7 @@ public class Livro {
         if (this.disponivel) {
             status = "Disponível";
         } else {
-            status = "Indisponível";
+            status = "Emprestado";
         }
 
         System.out.println(ContadorLivros + " " + "|Titulo: " + this.titulo + "|" +
@@ -65,4 +69,16 @@ public class Livro {
         l3.exibirFicha(3);
         return false;
     }
+
+    //exibe livros emprestados
+    public static void exibirLivrosEmprestados(Livro l1, Livro l2, Livro l3) {
+        if (!l1.disponivel) {
+            l1.exibirFicha(1);
+        } else if (!l2.disponivel) {
+            l2.exibirFicha(2);
+        } else if (!l3.disponivel) {
+            l3.exibirFicha(3);
+        }
+    }
+
 }
