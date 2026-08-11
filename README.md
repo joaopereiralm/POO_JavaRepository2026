@@ -49,6 +49,22 @@ Aplicação via terminal desenvolvida para gerenciar o acervo e a disponibilidad
 
 ---
 
+### 📦 Sistema de Gestão de Estoque e Vendas (`Produto` & `ProdutoApp`)
+Aplicação via terminal desenvolvida no pacote `SistemaEstoque` para gerenciar produtos em estoque e simular operações de venda e reposição com controle financeiro:
+- **Operações:**
+  - Exibição detalhada do catálogo de produtos com nome, preço unitário e quantidade disponível.
+  - Venda de itens com validação dupla de regras de negócio (estoque e saldo do comprador).
+  - Reposição de quantidade de itens no estoque.
+  - Exibição do total global de produtos cadastrados no sistema.
+- **Conceitos de POO Aplicados:**
+  - **Construtores e Sobrecarga (`this`):** Permite instanciar objetos com valores padrão ("Sem nome", R$ 0.00, 0) ou parametrizados com dados específicos de cada produto.
+  - **Atributos e Métodos Estáticos (`static`):** Uso do atributo `totalProdutos` para contagem global da quantidade de itens gerenciados e métodos estáticos auxiliares para exibição em lote do catálogo (`exibirDadosProdutos`).
+  - **Lógica de Parâmetros & Retorno:** O método de venda (`vender`) recebe o saldo do cliente como parâmetro, valida se há quantidade em estoque e saldo financeiro suficiente, efetua a dedução e retorna o saldo restante atualizado para o fluxo da aplicação.
+- **Estrutura de Controle:**
+  - Menu interativo com `switch case` para seleção das operações principais (Vender / Adicionar ao Estoque) e escolha individual do produto desejado.
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 * **Linguagem:** Java (JDK 17+)
