@@ -13,20 +13,37 @@ public class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
         totalProdutos++;
     }
+
     public static int getTotalProdutos(){return totalProdutos;}
 
     //métodos de instância
-    public void vender (int quantidade){
-        if (quantidadeEstoque >= 0){
-            this.quantidadeEstoque -= 1;
-        }
-        else{
+    public double vender (double saldoAtual, int quantidade){
+
+        if (this.quantidadeEstoque < quantidade){
             System.out.println("Estoque insuficiente");
+            return saldoAtual;
+        }
+
+        double valorTotal = this.preco * quantidade;
+
+        if (saldoAtual < valorTotal){
+            System.out.println("Saldo insuficiente! Valor da compra: R$" + valorTotal + " | Seu saldo: R$" + saldoAtual);
+            return saldoAtual;
+        }
+
+        else {
+            // se tem estoque e saldo suficiente:
+            this.quantidadeEstoque -= quantidade;
+            saldoAtual -= valorTotal; // Deduz o valor do saldo
+            System.out.println("Venda de " + quantidade + "x " + this.nome + " realizada com sucesso!");
+            System.out.println("Novo saldo: R$" + saldoAtual);
+
+            return saldoAtual; // Retorna o novo saldo atualizado
         }
     }
 
     public void repor (int quantidade){
-        this.quantidadeEstoque += 1;
+        this.quantidadeEstoque += quantidade;
     }
     public void exibirDados (int ContadorProdutos){
 
@@ -36,10 +53,9 @@ public class Produto {
 
     }
 
-    public static boolean exibirDadosProdutos(Produto produto1, Produto produto2, Produto produto3) {
+    public static void exibirDadosProdutos(Produto produto1, Produto produto2, Produto produto3) {
         produto1.exibirDados(1);
         produto2.exibirDados(2);
         produto3.exibirDados(3);
-        return false;
     }
 }
