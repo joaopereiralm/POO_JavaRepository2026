@@ -1,7 +1,5 @@
 package SistemaEstoque;
 
-import static SistemaEstoque.Produto.exibirDadosProdutos;
-
 import java.util.Scanner;
 
 public class ProdutoApp {
