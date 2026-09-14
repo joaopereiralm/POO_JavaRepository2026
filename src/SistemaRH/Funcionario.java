@@ -2,8 +2,8 @@ package SistemaRH;
 
 public class Funcionario {
 
-    private String nome;
-    private double salario;
+    protected String nome;
+    protected double salario;
     private int cargaHorariaSemanal;
 
     public  Funcionario (){this ("Sem nome", 0.00, 1);}
@@ -45,11 +45,16 @@ public class Funcionario {
         }
     }
 
+    public double calcularBonus(){
+        return this.salario * 0.15;
+    }
+
     public void exibirDadosF(){
-        System.out.println("\n--- Dados do Funcionário ---");
-        System.out.println("Nome: " + getNome());
-        System.out.println("Salário: R$" + getSalario());
-        System.out.println("Carga Horária Semanal: " + getCargaHorariaSemanal());
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Salário: R$" + this.salario);
+        System.out.println("Carga Horária Semanal: " + this.cargaHorariaSemanal);
+        System.out.println("Bônus: " + calcularBonus());
+        System.out.println("Total a receber: " + this.calcularBonus() + this.salario);
     }
 }
 
